@@ -1,43 +1,12 @@
 
 package View;
 
-import Model.Ave;
-import Model.Habitat;
-import Model.Mamifero;
-import Model.Zoologico;
-import java.awt.Frame;
-import javax.swing.DefaultListModel;
-import javax.swing.JOptionPane;
-
-
 public class Registro extends javax.swing.JDialog {
-
-    DefaultListModel<String> modelo=new DefaultListModel<>();
     
-    private Main Ventana_main;
-    
-    private final Zoologico objzoo;
-    
-    public Registro(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        
-        Ventana_main = (Main) parent;
+    public Registro(){
         
         initComponents();
-        this.setTitle("Registro de Animales");        
-        this.setLocationRelativeTo(null);
-        
-        
-        //recorre los objetos de la lista de habitas.
-        objzoo = Ventana_main.getObj_zoo();
-        
-        for(Habitat obj_hab: objzoo.habitat_zoo){
-            modelo.addElement(obj_hab.getNombre());            
-        }
-
-        Listajaula.setModel(modelo);            
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,10 +16,13 @@ public class Registro extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
         jComboTipo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         Listajaula = new javax.swing.JList<>();
+        jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,15 +30,23 @@ public class Registro extends javax.swing.JDialog {
         txtdescripcion = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel3.setText("CONSULTA POR HABITAT");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel4.setText("CONSULTA POR HABITAT");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(426, 400));
+        setMaximumSize(new java.awt.Dimension(500, 500));
+        setMinimumSize(new java.awt.Dimension(500, 500));
         setPreferredSize(new java.awt.Dimension(426, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 130, -1));
+        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 130, -1));
 
         jComboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mamifero", "Ave" }));
-        getContentPane().add(jComboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 130, -1));
+        getContentPane().add(jComboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 130, -1));
 
         Listajaula.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -75,100 +55,70 @@ public class Registro extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(Listajaula);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 210, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 210, 110));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel5.setText("REGISTRA UN ANIMAL");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 330, 31));
+
+        jButton1.setBackground(new java.awt.Color(255, 204, 102));
         jButton1.setText("Registrar");
+        jButton1.setToolTipText("");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 80, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 80, 30));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel1.setText("Nombre");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel2.setText("Tipo");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel7.setText("Descripcion del Habitat");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
         txtdescripcion.setBackground(new java.awt.Color(204, 204, 204));
         txtdescripcion.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        getContentPane().add(txtdescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, 50));
+        getContentPane().add(txtdescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 310, 60));
 
-        jLabel8.setText("HABITAT");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
+        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel8.setText("habitat");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(255, 204, 102));
         jButton2.setText("SALIR");
+        jButton2.setToolTipText("");
+        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 70, 30));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/back2.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        if (!txtnombre.getText().isEmpty()){
-
-            if (jComboTipo.getSelectedItem().toString() == "Ave"){
-                //crea objeto primero
-                Ave obj_ave = new Ave(txtnombre.getText());
-                for(Habitat obj_hab: objzoo.habitat_zoo){
-                    if (Listajaula.getSelectedValue() == obj_hab.getNombre()){
-                        obj_hab.Lista_Aves.add(obj_ave);
-                    }
-                }
-            }
-            else{ //mamiferos
-                Mamifero obj_mamifero = new Mamifero(txtnombre.getText());
-                for(Habitat obj_hab: objzoo.habitat_zoo){
-                    if (Listajaula.getSelectedValue() == obj_hab.getNombre()){
-                        obj_hab.Lista_Mamiferos.add(obj_mamifero);
-                    }
-                }
-            }
-            //IMPRIME LO QUE TIENE HABITAT CON SUS ANIMALES
-            for(Habitat obj_hab: objzoo.habitat_zoo){
-                System.out.println("");                                
-                System.out.println("habitad "+ obj_hab.getNombre());
-                System.out.println("");                
-                
-                for(Ave obj_ave: obj_hab.Lista_Aves){
-                    System.out.println("Ave:  "+ obj_ave.getNombre());
-                }
-                
-                for(Mamifero obj_mamifero: obj_hab.Lista_Mamiferos){
-                    System.out.println("Mamifero:  "+ obj_mamifero.getNombre());
-                }
-            }
-            
-            
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Falta nombre ","Informacion", JOptionPane.INFORMATION_MESSAGE);                            
-        }
-
+        System.out.println("se ha registrado");    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        dispose();
+    dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void ListajaulaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ListajaulaValueChanged
-        //muestra informacion del habitad
-        for(Habitat obj_hab: objzoo.habitat_zoo){
-            if (Listajaula.getSelectedValue() == obj_hab.getNombre()){
-                txtdescripcion.setText(obj_hab.getDescripcion());
-            }
-        }
-        
+    
     }//GEN-LAST:event_ListajaulaValueChanged
 
 
@@ -179,6 +129,10 @@ public class Registro extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> jComboTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;

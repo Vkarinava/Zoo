@@ -3,10 +3,7 @@ package Model;
 
 import java.util.ArrayList;
 
-    public class Habitat {
-    
-    
-    
+public class Habitat {
     private String Nombre;    
     private String Descripcion;        
     private String tamano;    

@@ -1,58 +1,13 @@
 
 package View;
 
-import Model.Habitat;
-import Model.Zoologico;
-import java.awt.Image;
-import java.awt.Toolkit;
-
 
 public class Main extends javax.swing.JFrame {
-    //crea listas de para las aves  mamiferos habitats
     
-    private Zoologico obj_zoo = new Zoologico();        
-    
-    public Zoologico getObj_zoo() {
-        return obj_zoo;
-    }
-       
-    public Main() {
+    public Main(){
         
         initComponents();
-        this.setTitle("Zoologico La Sabana");
-        Image icono = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagenes/icono_zoo.jpg"));        
-        this.setIconImage(icono);
-        this.setLocationRelativeTo(null);
-        
-        Inicializa_Zoo_Habit();
-   
     }
-
-    private void Inicializa_Zoo_Habit(){
-        //inicializa Clase zoologico y la lista Habitad.
-        
-        Habitat obj_habitat1 = new Habitat();
-        obj_habitat1.setNombre("Montaña");
-        obj_habitat1.setDescripcion("Montaña Habitat con climas variados");
-        obj_habitat1.setTamano("1m x 1m x 1m");
-        
-        obj_zoo.habitat_zoo.add(obj_habitat1);
-        
-        Habitat obj_habitat2 = new Habitat();
-        obj_habitat2.setNombre("Bosque");
-        obj_habitat2.setDescripcion("Bosque Habitat con climas variados");
-        obj_habitat2.setTamano("1m x 1m x 1m");
-        
-        obj_zoo.habitat_zoo.add(obj_habitat2);        
-
-
-        Habitat obj_habitat3 = new Habitat();
-        obj_habitat3.setNombre("Sabana");
-        obj_habitat3.setDescripcion("Sabana Habitat con climas variados");
-        obj_habitat3.setTamano("1m x 1m x 1m");
-        
-        obj_zoo.habitat_zoo.add(obj_habitat3);        
-   }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,31 +20,33 @@ public class Main extends javax.swing.JFrame {
 
         btnRegistrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         btnRegistrar1 = new javax.swing.JButton();
         btnRegistrar2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(616, 442));
+        setMaximumSize(new java.awt.Dimension(616, 442));
+        setMinimumSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnRegistrar.setBackground(new java.awt.Color(51, 204, 0));
         btnRegistrar.setText("Conoce a los animales");
+        btnRegistrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 150, 40));
+        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, 150, 40));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Zoologico LA SABANA");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 270, 80));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 440, 80));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_zoo.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 270, 170));
-
+        btnRegistrar1.setBackground(new java.awt.Color(51, 204, 0));
         btnRegistrar1.setText("Gestionar Animales");
+        btnRegistrar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegistrar1.setMaximumSize(new java.awt.Dimension(74, 23));
         btnRegistrar1.setMinimumSize(new java.awt.Dimension(74, 23));
         btnRegistrar1.setPreferredSize(new java.awt.Dimension(74, 23));
@@ -98,35 +55,40 @@ public class Main extends javax.swing.JFrame {
                 btnRegistrar1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegistrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 150, 40));
+        getContentPane().add(btnRegistrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 150, 40));
 
+        btnRegistrar2.setBackground(new java.awt.Color(51, 204, 0));
         btnRegistrar2.setText("Habitats");
+        btnRegistrar2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegistrar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrar2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegistrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 150, 40));
+        getContentPane().add(btnRegistrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 150, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/backk1.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        //llama la ventana de dialogo
-        Acciones objetoDialoag = new Acciones(this,true);
-        objetoDialoag.setVisible(true);
+      // TODO add your handling code here:
+      Acciones accion= new Acciones();
+      accion.setVisible(true);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrar1ActionPerformed
         // TODO add your handling code here:
-        Registro objetoDialoag = new Registro(this,true);
-        objetoDialoag.setVisible(true);
+        Registro reg= new Registro();
+        reg.setVisible(true);
     }//GEN-LAST:event_btnRegistrar1ActionPerformed
 
     private void btnRegistrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrar2ActionPerformed
         // TODO add your handling code here:
-        GestionHabitat objetoDialoag = new GestionHabitat(this,true);
-        objetoDialoag.setVisible(true);
+        GestionHabitat habitat= new GestionHabitat();
+        habitat.setVisible(true);
     }//GEN-LAST:event_btnRegistrar2ActionPerformed
 
     /**
@@ -169,6 +131,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrar1;
     private javax.swing.JButton btnRegistrar2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
